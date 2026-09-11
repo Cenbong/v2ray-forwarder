@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: v2ray-sg
+    env: docker
+    repo: https://github.com/Cenbong/v2ray-forwarder
+    region: singapore
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: "10000"

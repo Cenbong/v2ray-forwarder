@@ -1,0 +1,55 @@
+Log:
+  Level: warning
+  AccessPath:
+  ErrorPath:
+
+DnsConfigPath:
+
+InboundConfig:
+  - Port: 8080
+    ListenIP: 0.0.0.0
+    Protocol: Vless
+    Decouple: false
+    DisableSniffing: false
+    EnableProxyProtocol: false
+    AllowTransparentProxy: false
+
+RouterConfig:
+  RouterMethod: asis
+  RuleListPath:
+  DomainStrategy: AsIs
+
+OutboundConfig:
+  - Tag: proxy
+    Protocol: Freedom
+    StreamSettings: {}
+
+CertConfig:
+  CertMode: none
+  CertFile:
+  KeyFile:
+  Provider:
+  Email:
+
+Nodes:
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "http://v3.cisps.net"
+      ApiKey: "1111222233334444"
+      NodeID: 12
+      NodeType: V2ray
+      Timeout: 30
+      EnableVless: false
+      EnableXTLS: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      RuleListPath:
+      DisableCustomConfig: false
+    ControllerConfig:
+      UpdatePeriodic: 60
+      CertConfig:
+        CertMode: none
+        CertFile:
+        KeyFile:
+        Provider:
+        Email:
