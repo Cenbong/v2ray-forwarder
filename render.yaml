@@ -1,0 +1,19 @@
+version: "1"
+services:
+  - type: web
+    name: v2ray-forwarder
+    env: docker
+    repo: https://github.com/Cenbong/v2ray-forwarder
+    region: frankfurt
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "8443"
+      - key: UUID
+        generateValue: true
+    disk:
+      name: v2ray-config
+      mountPath: /etc/v2ray
+      sizeGB: 1
